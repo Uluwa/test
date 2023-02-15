@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper {
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+    .item {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        transition: .5s;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .item--front {
+        background-color: aqua;
+        color: black;
+        z-index: 1;
+    }
+    .item--back {
+        background-color: blueviolet;
+        color: bisque;
+        transform: rotateY(180deg);
+        z-index: 0;
+    }
+    .wrapper:hover .item--front {
+        transform: rotateY(180deg);
+        z-index: 0;
+    }
+    .wrapper:hover .item--back {
+        transform: rotateY(0deg);
+        z-index: 1;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="item item--front">1x</div> 
+        <div class="item item--back">Bet</div>
+    </div>
+</body>
+</html>
